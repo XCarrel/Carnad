@@ -1,5 +1,38 @@
-﻿@{
+﻿@model ContactViewModel
+@{
     ViewData["Title"] = "Accueil";
 }
 
 <h1>Carnet d'adresses</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Prénom</th><th>Nom</th><th colspan="2">Téléphone</th><th>Email</th><th>Groupes</th></tr>
+    </thead>
+    <tbody>
+        @foreach (Contact contact in Model.contacts)
+        {
+        <tr>
+            <td>@contact.FirstName</td>
+            <td>@contact.LastName</td>
+            @if (contact.Country == null)
+            {
+                <td colspan="2">&nbsp;</td>
+            }
+            else
+            {
+                <td>@contact.Country.Name (+@contact.Country.DialCode)</td>
+                <td>@(String.IsNullOrEmpty(contact.PhoneNumber) ? "-" : contact.PhoneNumber)</td>
+            }
+            <td>@(String.IsNullOrEmpty(contact.Email) ? "-" : contact.Email)</td>
+            @if (contact.groups.Count() == 0)
+            {
+                <td>(Aucun)</td>
+            }
+            else
+            {
+                <td>@String.Join(", ", contact.groups)</td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>

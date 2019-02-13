@@ -13,6 +13,11 @@ namespace AddressBook.Models
         {
             this.Name = name;
         }
+
+        public override string ToString()
+        {
+            return this.Name;
+        }
     }
     public class GroupViewModel
     {

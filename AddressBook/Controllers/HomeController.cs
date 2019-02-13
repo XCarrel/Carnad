@@ -12,12 +12,32 @@ namespace AddressBook.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            ContactViewModel data = new ContactViewModel();
+
+            data.contacts.Add(new Contact("Sheldon", "Cooper"));
+            data.contacts.Add(new Contact("Penny", "Lame"));
+            data.contacts.Add(new Contact("Howard", "Wolowitz"));
+            data.contacts.Add(new Contact("Bernadette", "Klinks"));
+
+            data.contacts[0].Email = "Sheldon@mit.us";
+            data.contacts[1].PhoneNumber = "21 122 12 12";
+            data.contacts[1].Country = new Country("Allemagne", 49);
+            data.contacts[2].PhoneNumber = "33 444 43 34";
+            data.contacts[2].Country = new Country("Suisse", 41);
+            data.contacts[2].groups.Add(new Group("Tennis"));
+            data.contacts[3].PhoneNumber = "98 765 43 21";
+            data.contacts[3].Country = new Country("Suisse", 41);
+            data.contacts[3].groups.Add(new Group("Tennis"));
+            data.contacts[3].groups.Add(new Group("Collègues"));
+            data.contacts[3].groups.Add(new Group("Amis"));
+
+
+            return View(data);
         }
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Carnet d'adresse";
+            ViewData["Message"] = "Carnet d'addresse";
 
             return View();
         }
