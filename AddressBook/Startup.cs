@@ -55,6 +55,14 @@ namespace AddressBook
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "groups",
+                    template: "group",
+                    defaults: new { controller = "Group", action = "Index" });
+                routes.MapRoute(
+                    name: "countries",
+                    template: "country",
+                    defaults: new { controller = "Country", action = "Index" });
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
