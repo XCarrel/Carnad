@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using AddressBook.Models;
 
 namespace AddressBook.Controllers
 {
@@ -10,7 +11,11 @@ namespace AddressBook.Controllers
     {
         public IActionResult Index()
         {
-            return View(); 
+            CountryViewModel data = new CountryViewModel();
+            data.countries.Add(new Country("Suisse", 41));
+            data.countries.Add(new Country("France", 33));
+            data.countries.Add(new Country("Allemagne", 49));
+            return View(data); 
         }
     }
 }

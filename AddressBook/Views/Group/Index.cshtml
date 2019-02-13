@@ -3,3 +3,9 @@
 }
 
 <h1>Groupes</h1>
+<ul>
+    @foreach (Group group in Model.groups)
+    {
+        <li>@group.Name</li>
+    }
+</ul>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using AddressBook.Models;
 
 namespace AddressBook.Controllers
 {
@@ -10,7 +11,13 @@ namespace AddressBook.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            GroupViewModel data = new GroupViewModel();
+
+            data.groups.Add(new Group("Collègues"));
+            data.groups.Add(new Group("Tennis"));
+            data.groups.Add(new Group("Famille"));
+
+            return View(data);
         }
     }
 }

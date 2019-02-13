@@ -5,8 +5,22 @@ using System.Threading.Tasks;
 
 namespace AddressBook.Models
 {
-    public class GroupViewModel
+    public class Group
     {
         public string Name { get; set; }
+
+        public Group(string name)
+        {
+            this.Name = name;
+        }
+    }
+    public class GroupViewModel
+    {
+        public List<Group> groups;
+
+        public GroupViewModel()
+        {
+            groups = new List<Group>();
+        }
     }
 }

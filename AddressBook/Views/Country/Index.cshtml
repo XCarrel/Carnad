@@ -1,5 +1,12 @@
-﻿@{
+﻿@model CountryViewModel
+@{
     ViewData["Title"] = "Pays";
 }
 
 <h1>Pays</h1>
+<ul>
+    @foreach (Country country in Model.countries)
+    {
+        <li>@country.Name, indicatif: +@country.DialCode</li>
+    }
+</ul>
