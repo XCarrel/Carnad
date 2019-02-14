@@ -20,7 +20,7 @@
             }
             else
             {
-                <td>@contact.Country.Name (+@contact.Country.DialCode)</td>
+                <td>@contact.Country.Name (<label asp-for="contacts[0].Country.DialCode"></label> @contact.Country.DialCode)</td>
                 <td>@(String.IsNullOrEmpty(contact.PhoneNumber) ? "-" : contact.PhoneNumber)</td>
             }
             <td>@(String.IsNullOrEmpty(contact.Email) ? "-" : contact.Email)</td>
