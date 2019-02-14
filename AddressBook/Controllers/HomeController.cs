@@ -12,8 +12,11 @@ namespace AddressBook.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.Page = "home";
+
+            // Retrieve user name for title
             string user = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-            user = user.Substring(user.LastIndexOf('\\') + 1); 
+            user = user.Substring(user.LastIndexOf('\\') + 1);  // Strip off domain name
             ViewBag.User = user;
 
             ContactViewModel data = new ContactViewModel();
@@ -41,6 +44,7 @@ namespace AddressBook.Controllers
 
         public IActionResult About()
         {
+            ViewBag.Page = "about";
             ViewData["Message"] = "Carnet d'addresse";
 
             return View();

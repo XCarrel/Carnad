@@ -11,6 +11,7 @@ namespace AddressBook.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.Page = "groups";
             GroupViewModel data = new GroupViewModel();
 
             data.groups.Add(new Group("Collègues"));

@@ -11,6 +11,7 @@ namespace AddressBook.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.Page = "countries";
             CountryViewModel data = new CountryViewModel();
             data.countries.Add(new Country("Suisse", 41));
             data.countries.Add(new Country("France", 33));

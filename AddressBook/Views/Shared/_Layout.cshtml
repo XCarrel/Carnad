@@ -30,10 +30,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Accueil</a></li>
-                    <li><a href="/group">Groupes</a></li>
-                    <li><a href="/country">Pays</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">A propos</a></li>
+                    <li><a @(ViewBag.Page == "home" ? "class=selectedpage" : "") asp-area="" asp-controller="Home" asp-action="Index">Accueil</a></li>
+                    <li><a @(ViewBag.Page == "groups" ? "class=selectedpage" : "") href="/group">Groupes</a></li>
+                    <li><a @(ViewBag.Page == "countries" ? "class=selectedpage" : "") href="/country">Pays</a></li>
+                    <li><a @(ViewBag.Page == "about" ? "class=selectedpage" : "") asp-area="" asp-controller="Home" asp-action="About">A propos</a></li>
                 </ul>
             </div>
         </div>
