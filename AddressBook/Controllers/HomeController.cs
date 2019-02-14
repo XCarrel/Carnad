@@ -12,6 +12,10 @@ namespace AddressBook.Controllers
     {
         public IActionResult Index()
         {
+            string user = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            user = user.Substring(user.LastIndexOf('\\') + 1); 
+            ViewBag.User = user;
+
             ContactViewModel data = new ContactViewModel();
 
             data.contacts.Add(new Contact("Sheldon", "Cooper"));
