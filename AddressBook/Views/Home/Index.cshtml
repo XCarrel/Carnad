@@ -9,7 +9,7 @@
         <tr><th>Prénom</th><th>Nom</th><th colspan="2">Téléphone</th><th>Email</th><th>Groupes</th></tr>
     </thead>
     <tbody>
-        @foreach (Contact contact in Model.contacts)
+        @foreach (Contacts contact in Model.contacts)
         {
         <tr>
             <td>@contact.FirstName</td>
@@ -20,17 +20,17 @@
             }
             else
             {
-                <td>@contact.Country.Name (<label asp-for="contacts[0].Country.DialCode"></label> @contact.Country.DialCode)</td>
+                <td>@contact.Country.Name (+@contact.Country.Dialcode)</td>
                 <td>@(String.IsNullOrEmpty(contact.PhoneNumber) ? "-" : contact.PhoneNumber)</td>
             }
             <td>@(String.IsNullOrEmpty(contact.Email) ? "-" : contact.Email)</td>
-            @if (contact.groups.Count() == 0)
+            @if (contact.Belong.Count() == 0)
             {
                 <td>(Aucun)</td>
             }
             else
             {
-                <td>@String.Join(", ", contact.groups)</td>
+                <td>Plusieurs</td>
             }
         </tr>
         }
