@@ -13,11 +13,6 @@ namespace AddressBook.Controllers
         {
             ViewBag.Page = "groups";
             GroupViewModel data = new GroupViewModel();
-
-            data.groups.Add(new Group("Collègues"));
-            data.groups.Add(new Group("Tennis"));
-            data.groups.Add(new Group("Famille"));
-
             return View(data);
         }
     }

@@ -13,9 +13,6 @@ namespace AddressBook.Controllers
         {
             ViewBag.Page = "countries";
             CountryViewModel data = new CountryViewModel();
-            data.countries.Add(new Country("Suisse", 41));
-            data.countries.Add(new Country("France", 33));
-            data.countries.Add(new Country("Allemagne", 49));
             return View(data); 
         }
     }

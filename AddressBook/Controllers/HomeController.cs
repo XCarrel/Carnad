@@ -19,25 +19,10 @@ namespace AddressBook.Controllers
             user = user.Substring(user.LastIndexOf('\\') + 1);  // Strip off domain name
             ViewBag.User = user;
 
+            CarnadContext db = new CarnadContext();
+
             ContactViewModel data = new ContactViewModel();
-
-            data.contacts.Add(new Contact("Sheldon", "Cooper"));
-            data.contacts.Add(new Contact("Penny", "Lame"));
-            data.contacts.Add(new Contact("Howard", "Wolowitz"));
-            data.contacts.Add(new Contact("Bernadette", "Klinks"));
-
-            data.contacts[0].Email = "Sheldon@mit.us";
-            data.contacts[1].PhoneNumber = "21 122 12 12";
-            data.contacts[1].Country = new Country("Allemagne", 49);
-            data.contacts[2].PhoneNumber = "33 444 43 34";
-            data.contacts[2].Country = new Country("Suisse", 41);
-            data.contacts[2].groups.Add(new Group("Tennis"));
-            data.contacts[3].PhoneNumber = "98 765 43 21";
-            data.contacts[3].Country = new Country("Suisse", 41);
-            data.contacts[3].groups.Add(new Group("Tennis"));
-            data.contacts[3].groups.Add(new Group("Collègues"));
-            data.contacts[3].groups.Add(new Group("Amis"));
-
+            data.contacts = db.Contacts;
 
             return View(data);
         }
