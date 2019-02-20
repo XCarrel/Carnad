@@ -10,6 +10,12 @@ namespace AddressBook.Controllers
 {
     public class HomeController : Controller
     {
+        private CarnadContext carnadContext;
+        public HomeController(CarnadContext cc)
+        {
+            carnadContext = cc;
+        }
+
         public IActionResult Index()
         {
             ViewBag.Page = "home";
@@ -19,9 +25,8 @@ namespace AddressBook.Controllers
             user = user.Substring(user.LastIndexOf('\\') + 1);  // Strip off domain name
             ViewBag.User = user;
 
-            CarnadContext db = new CarnadContext();
             ContactViewModel data = new ContactViewModel();
-            data.contacts = db.Contacts;
+            data.contacts = carnadContext.Contacts;
 
             return View(data);
         }

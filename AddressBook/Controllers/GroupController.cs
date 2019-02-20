@@ -9,12 +9,17 @@ namespace AddressBook.Controllers
 {
     public class GroupController : Controller
     {
+        private CarnadContext carnadContext;
+        public GroupController(CarnadContext cc)
+        {
+            carnadContext = cc;
+        }
+
         public IActionResult Index()
         {
             ViewBag.Page = "groups";
-            CarnadContext db = new CarnadContext();
             GroupViewModel data = new GroupViewModel();
-            data.groups = db.Groups;
+            data.groups = carnadContext.Groups;
             return View(data);
         }
     }
