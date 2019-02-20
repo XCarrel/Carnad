@@ -9,6 +9,6 @@ namespace AddressBook.Models
 {
     public class ContactViewModel
     {
-        public DbSet<Contacts> contacts;
+        public List<Contacts> contacts;
     }
 }

@@ -7,6 +7,6 @@
 <ul>
     @foreach (Countries country in Model.countries)
     {
-        <li>@country.Name, indicatif: +@country.Dialcode</li>
+        <li>@country.Name, indicatif: +@country.Dialcode (@country.Contacts.Count)</li>
     }
 </ul>

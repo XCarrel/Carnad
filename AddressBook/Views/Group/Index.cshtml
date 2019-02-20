@@ -6,6 +6,6 @@
 <ul>
     @foreach (Groups group in Model.groups)
     {
-        <li>@group.Name</li>
+        <li>@group.Name (@group.Belong.Count)</li>
     }
 </ul>

@@ -8,6 +8,6 @@ namespace AddressBook.Models
 {
     public class GroupViewModel
     {
-        public DbSet<Groups> groups;
+        public List<Groups> groups;
     }
 }

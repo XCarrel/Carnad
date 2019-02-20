@@ -9,6 +9,6 @@ namespace AddressBook.Models
 {
     public class CountryViewModel
     {
-        public DbSet<Countries> countries;
+        public List<Countries> countries;
     }
 }

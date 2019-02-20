@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AddressBook.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AddressBook.Controllers
 {
@@ -26,7 +27,8 @@ namespace AddressBook.Controllers
             ViewBag.User = user;
 
             ContactViewModel data = new ContactViewModel();
-            data.contacts = carnadContext.Contacts;
+            // eagerly load navigation properties
+            data.contacts = carnadContext.Contacts.Include(c => c.Country).Include(c => c.Belong).ToList();
 
             return View(data);
         }

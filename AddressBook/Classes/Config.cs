@@ -7,6 +7,6 @@ namespace AddressBook
 {
     public class AppConfig
     {
-        public static string sVersion = "1.0.1";
+        public static string sVersion = "1.0.2";
     }
 }
