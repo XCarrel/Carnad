@@ -30,7 +30,12 @@
             }
             else
             {
-                <td>Plusieurs</td>
+                <td>
+                    @foreach (Belong b in contact.Belong)
+                    {
+                        <span>@b.Group.Name</span>
+                    }
+                </td>
             }
         </tr>
         }

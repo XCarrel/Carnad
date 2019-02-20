@@ -28,7 +28,7 @@ namespace AddressBook.Controllers
 
             ContactViewModel data = new ContactViewModel();
             // eagerly load navigation properties
-            data.contacts = carnadContext.Contacts.Include(c => c.Country).Include(c => c.Belong).ToList();
+            data.contacts = carnadContext.Contacts.Include(c => c.Country).Include(c => c.Belong).ThenInclude(b => b.Group).ToList();
 
             return View(data);
         }
