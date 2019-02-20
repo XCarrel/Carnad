@@ -20,7 +20,6 @@ namespace AddressBook.Controllers
             ViewBag.User = user;
 
             CarnadContext db = new CarnadContext();
-
             ContactViewModel data = new ContactViewModel();
             data.contacts = db.Contacts;
 

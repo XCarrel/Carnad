@@ -5,8 +5,8 @@
 
 <h1>Pays</h1>
 <ul>
-    @foreach (Country country in Model.countries)
+    @foreach (Countries country in Model.countries)
     {
-        <li>@country.Name, indicatif: +@country.DialCode</li>
+        <li>@country.Name, indicatif: +@country.Dialcode</li>
     }
 </ul>
