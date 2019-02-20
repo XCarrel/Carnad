@@ -88,7 +88,7 @@ namespace AddressBook.Models
             modelBuilder.Entity<Countries>(entity =>
             {
                 entity.HasIndex(e => e.Name)
-                    .HasName("UQ__Countrie__737584F66AD5302F")
+                    .HasName("UQ__Countrie__737584F6536C97A7")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("id");
@@ -102,7 +102,7 @@ namespace AddressBook.Models
             modelBuilder.Entity<Groups>(entity =>
             {
                 entity.HasIndex(e => e.Name)
-                    .HasName("UQ__Groups__737584F60A34898C")
+                    .HasName("UQ__Groups__737584F640D6FDD9")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("id");

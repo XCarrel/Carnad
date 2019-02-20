@@ -20,7 +20,7 @@
             }
             else
             {
-                <td>@contact.Country.Name (+ @contact.Country.Dialcode)</td>
+                <td>@contact.Country.Name (+@contact.Country.Dialcode)</td>
                 <td>@(String.IsNullOrEmpty(contact.PhoneNumber) ? "-" : contact.PhoneNumber)</td>
             }
             <td>@(String.IsNullOrEmpty(contact.Email) ? "-" : contact.Email)</td>
@@ -30,7 +30,7 @@
             }
             else
             {
-                <td>Some</td>
+                <td>Plusieurs</td>
             }
         </tr>
         }
