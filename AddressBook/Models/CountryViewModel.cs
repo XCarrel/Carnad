@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -8,6 +9,6 @@ namespace AddressBook.Models
 {
     public class CountryViewModel
     {
-        public List<Countries> countries;
+        public DbSet<Countries> countries;
     }
 }

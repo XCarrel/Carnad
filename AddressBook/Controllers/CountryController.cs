@@ -12,7 +12,9 @@ namespace AddressBook.Controllers
         public IActionResult Index()
         {
             ViewBag.Page = "countries";
+            CarnadContext db = new CarnadContext();
             CountryViewModel data = new CountryViewModel();
+            data.countries = db.Countries;
             return View(data); 
         }
     }
