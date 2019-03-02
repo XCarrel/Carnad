@@ -48,7 +48,8 @@ GO
 
 CREATE TABLE Groups(
 	id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	Name varchar(15) UNIQUE NOT NULL)
+	Name varchar(15) UNIQUE NOT NULL,
+	Description varchar(500))
 
 CREATE TABLE Countries(
 	id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
