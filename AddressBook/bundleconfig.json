@@ -1,0 +1,19 @@
+[
+  {
+    "outputFileName": "wwwroot/css/carnad.min.css",
+    "inputFiles": [
+      "css/carnad.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/carnad.min.js",
+    "inputFiles": [
+      "js/carnad.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

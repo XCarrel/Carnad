@@ -11,7 +11,7 @@
     <tbody>
         @foreach (Contacts contact in Model.contacts)
         {
-        <tr>
+        <tr class="clickable-row" data-href="Contacts/Details/@contact.Id">
             <td>@contact.FirstName</td>
             <td>@contact.LastName</td>
             @if (contact.Country == null)

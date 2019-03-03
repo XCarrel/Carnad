@@ -18,13 +18,6 @@ namespace AddressBook.Controllers
             _context = context;
         }
 
-        // GET: Contacts
-        public async Task<IActionResult> Index()
-        {
-            var carnadContext = _context.Contacts.Include(c => c.Country);
-            return View(await carnadContext.ToListAsync());
-        }
-
         // GET: Contacts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -62,10 +55,10 @@ namespace AddressBook.Controllers
             {
                 _context.Add(contacts);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Home");
             }
             ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name", contacts.CountryId);
-            return View(contacts);
+            return View("Details",contacts);
         }
 
         // GET: Contacts/Edit/5
@@ -115,7 +108,7 @@ namespace AddressBook.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return View("Details",contacts);
             }
             ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name", contacts.CountryId);
             return View(contacts);
@@ -148,7 +141,7 @@ namespace AddressBook.Controllers
             var contacts = await _context.Contacts.FindAsync(id);
             _context.Contacts.Remove(contacts);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Home");
         }
 
         private bool ContactsExists(int id)
