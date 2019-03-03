@@ -43,7 +43,9 @@
             @Html.DisplayNameFor(model => model.Gender)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Gender)
+            <input type="radio" name="Gender" value="1" disabled @(Model.Gender == 1 ? "checked" : "") /> Homme
+            <input type="radio" name="Gender" value="2" disabled @(Model.Gender == 2 ? "checked" : "") /> Femme
+            <input type="radio" name="Gender" value="0" disabled @(Model.Gender == 0 ? "checked" : "") /> Autre
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Country)
