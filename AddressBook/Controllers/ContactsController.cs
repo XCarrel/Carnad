@@ -90,12 +90,14 @@ namespace AddressBook.Controllers
                 return NotFound();
             }
 
+            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name", contacts.CountryId);
             if (ModelState.IsValid)
             {
                 try
                 {
                     _context.Update(contacts);
                     await _context.SaveChangesAsync();
+                    contacts = await _context.Contacts.Include(c => c.Country).FirstOrDefaultAsync(m => m.Id == id); // must reload to get related data
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -110,7 +112,6 @@ namespace AddressBook.Controllers
                 }
                 return View("Details",contacts);
             }
-            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name", contacts.CountryId);
             return View(contacts);
         }
 
