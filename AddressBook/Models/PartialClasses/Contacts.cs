@@ -25,12 +25,16 @@ namespace AddressBook.Models
         [Display(Name = "Prénom")]
         public string FirstName { get; set; }
 
+        [StringLength(50, MinimumLength =2, ErrorMessage ="Le nom doit faire entre deux et cinquante caractères de long")]
+        [Required(ErrorMessage ="Le nom doit être défini")]
         [Display(Name = "Nom")]
         public string LastName { get; set; }
 
+        [RegularExpression(@"^([0-9\(\)\/\+ \-]*)$", ErrorMessage = "Cela ne ressemble pas à un numéro de téléphone")]
         [Display(Name = "Téléphone")]
         public string PhoneNumber { get; set; }
 
+        [EmailAddress(ErrorMessage ="Ceci n'est pas une adresse email valide")]
         [Display(Name = "Courriel")]
         public string Email { get; set; }
 
