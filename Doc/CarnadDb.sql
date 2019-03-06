@@ -62,6 +62,8 @@ CREATE TABLE Contacts(
 	LastName varchar(50) NOT NULL,
 	PhoneNumber varchar(15),
 	Email varchar(250),
+	BlackList tinyint NOT NULL DEFAULT 0,
+	Gender tinyint,
 	Country_id int NOT NULL)
 CREATE UNIQUE NONCLUSTERED INDEX UniqueContact ON Contacts (FirstName,LastName)
 
