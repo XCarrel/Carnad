@@ -3,7 +3,7 @@
         window.location = $(this).data('href')
     })
 
-    // Group name validation
+   // Group name validation
     $('#newgroup').keyup(function () {
         $('#cmdNew').prop('disabled', $(this).val().length < 2) // group name must be at least 2 chars long
         $.get("api/Groups/Exists/" + $(this).val(), function (data, status) {
