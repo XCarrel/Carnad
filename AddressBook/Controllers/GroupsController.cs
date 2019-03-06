@@ -46,20 +46,6 @@ namespace AddressBook.Controllers
             return Ok(groups);
         }
 
-        // GET: api/Groups/Exists/Work
-        [HttpGet("{name}")]
-        public async Task<IActionResult> Exists([FromRoute] string name)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            bool res = (_context.Groups.Where(g => g.Name == name).Count() > 0);
-
-            return Ok(res);
-        }
-
         // PUT: api/Groups/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutGroups([FromRoute] int id, [FromBody] Groups groups)
