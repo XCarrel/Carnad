@@ -9,3 +9,9 @@
         <li>@group.Name (@group.Belong.Count): @group.Description</li>
     }
 </ul>
+<form action="Groups">
+    <label for="newgroup">Nouveau groupe: </label>
+    <input type="text" id="newgroup" name="newgroup" />
+    <input id="cmdNew" type="submit" class="btn btn-info" value="Créer" disabled />
+    <span id="errgrp" class="text-danger hidden">Ce groupe existe déjà !!!</span>
+</form>
