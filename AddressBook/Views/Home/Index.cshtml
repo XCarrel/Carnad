@@ -1,4 +1,7 @@
-﻿@model ContactViewModel
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model ContactViewModel
 @{
     ViewData["Title"] = "Accueil";
 }
@@ -40,4 +43,7 @@
         }
     </tbody>
 </table>
-<a class="btn btn-primary" asp-controller="Contacts" asp-action="Create">Nouveau contact</a>
+@if (SignInManager.IsSignedIn(User))
+{
+    <a class="btn btn-primary" asp-controller="Contacts" asp-action="Create">Nouveau contact</a>
+}
