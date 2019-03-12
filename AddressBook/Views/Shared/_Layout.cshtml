@@ -35,6 +35,7 @@
                     <li><a @(ViewBag.Page == "countries" ? "class=selectedpage" : "") href="/country">Pays</a></li>
                     <li><a @(ViewBag.Page == "about" ? "class=selectedpage" : "") href="/about">A propos</a></li>
                 </ul>
+                <partial name="_LoginPartial" />
             </div>
         </div>
     </nav>
