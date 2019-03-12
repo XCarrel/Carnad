@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AddressBook.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AddressBook.Controllers
 {
@@ -38,6 +39,7 @@ namespace AddressBook.Controllers
         }
 
         // GET: Contacts/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name");
@@ -49,6 +51,7 @@ namespace AddressBook.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,PhoneNumber,Email,BoolBlackList,Gender,CountryId")] Contacts contacts)
         {
             if (ModelState.IsValid)
@@ -62,6 +65,7 @@ namespace AddressBook.Controllers
         }
 
         // GET: Contacts/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -83,6 +87,7 @@ namespace AddressBook.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,PhoneNumber,Email,BoolBlackList,Gender,CountryId")] Contacts contacts)
         {
             if (id != contacts.Id)
@@ -116,6 +121,7 @@ namespace AddressBook.Controllers
         }
 
         // GET: Contacts/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,6 +143,7 @@ namespace AddressBook.Controllers
         // POST: Contacts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var contacts = await _context.Contacts.FindAsync(id);

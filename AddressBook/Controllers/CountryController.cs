@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AddressBook.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AddressBook.Controllers
 {
+    [Authorize]
     public class CountryController : Controller
     {
         private CarnadContext carnadContext;
