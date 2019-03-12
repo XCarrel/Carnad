@@ -19,8 +19,10 @@ namespace AddressBook.Areas.Identity
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("IdentityContextConnection")));
 
-                services.AddDefaultIdentity<IdentityUser>()
-                    .AddEntityFrameworkStores<IdentityContext>();
+                services
+                    .AddIdentity<IdentityUser, IdentityRole>()
+                    .AddEntityFrameworkStores<IdentityContext>()
+                    .AddRoles<IdentityRole>(); 
             });
         }
     }

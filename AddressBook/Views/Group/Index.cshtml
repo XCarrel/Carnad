@@ -9,7 +9,7 @@
         <li>@group.Name (@group.Belong.Count): @group.Description</li>
     }
 </ul>
-<form action="Groups">
+<form action="Group/Create" method="post">
     <label for="newgroup">Nouveau groupe: </label>
     <input type="text" id="newgroup" name="newgroup" />
     <input id="cmdNew" type="submit" class="btn btn-info" value="Créer" disabled />

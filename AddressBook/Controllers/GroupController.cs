@@ -25,5 +25,19 @@ namespace AddressBook.Controllers
             data.groups = carnadContext.Groups.Include(c => c.Belong).ToList();
             return View(data);
         }
+
+        // POST: Groups/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles ="Boss")]
+        public async Task<IActionResult> Create(String newgroup)
+        {
+            Groups g = new Groups();
+            g.Name = newgroup;
+            carnadContext.Add(g);
+            await carnadContext.SaveChangesAsync();
+            return RedirectToAction("Index", "Group");
+        }
+
     }
 }
