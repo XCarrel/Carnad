@@ -21,6 +21,8 @@ namespace AddressBook.Areas.Identity
 
                 services
                     .AddIdentity<IdentityUser, IdentityRole>()
+                    .AddDefaultTokenProviders()
+                    .AddDefaultUI()
                     .AddEntityFrameworkStores<IdentityContext>()
                     .AddRoles<IdentityRole>(); 
             });

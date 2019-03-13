@@ -64,11 +64,15 @@ namespace AddressBook
                     defaults: new { controller = "Home", action = "About" });
                 routes.MapRoute(
                     name: "groups",
-                    template: "group",
+                    template: "groups",
                     defaults: new { controller = "Group", action = "Index" });
                 routes.MapRoute(
+                    name: "creategroup",
+                    template: "groups/create",
+                    defaults: new { controller = "Group", action = "Create" });
+                routes.MapRoute(
                     name: "countries",
-                    template: "country",
+                    template: "countries",
                     defaults: new { controller = "Country", action = "Index" });
                 routes.MapRoute(
                     name: "default",

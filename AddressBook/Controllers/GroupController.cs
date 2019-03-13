@@ -28,7 +28,6 @@ namespace AddressBook.Controllers
 
         // POST: Groups/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
         [Authorize(Roles ="Boss")]
         public async Task<IActionResult> Create(String newgroup)
         {

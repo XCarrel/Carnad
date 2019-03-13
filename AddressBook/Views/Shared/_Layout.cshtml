@@ -31,8 +31,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a @(ViewBag.Page == "home" ? "class=selectedpage" : "") href="/">Accueil</a></li>
-                    <li><a @(ViewBag.Page == "groups" ? "class=selectedpage" : "") href="/group">Groupes</a></li>
-                    <li><a @(ViewBag.Page == "countries" ? "class=selectedpage" : "") href="/country">Pays</a></li>
+                    <li><a @(ViewBag.Page == "groups" ? "class=selectedpage" : "") href="/groups">Groupes</a></li>
+                    <li><a @(ViewBag.Page == "countries" ? "class=selectedpage" : "") href="/countries">Pays</a></li>
                     <li><a @(ViewBag.Page == "about" ? "class=selectedpage" : "") href="/about">A propos</a></li>
                 </ul>
                 <partial name="_LoginPartial" />
